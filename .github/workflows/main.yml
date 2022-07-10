@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron: '40 01 * * *'
+    - cron: '46 01 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
