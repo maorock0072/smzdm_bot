@@ -13,7 +13,7 @@ def push_to_wechat(text,desp,secretKey):
     """
     url = f'http://sc.ftqq.com/{secretKey}.send'
     session = requests.Session()
-    data = {'text':text,'desp':desp}
+    data = {'text':text,'desp':'messagecontent'}
     resp = session.post(url,data = data)
     print(resp)
     #return resp.json()
