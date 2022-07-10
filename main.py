@@ -51,16 +51,21 @@ class SMZDM_Bot(object):
 
 if __name__ == '__main__':
     sb = SMZDM_Bot()
-    # sb.load_cookie_str(config.TEST_COOKIE)
     cookies = os.environ["COOKIES"]
     sb.load_cookie_str(cookies)
     res = sb.checkin()
     print(res)
     SERVERCHAN_SECRETKEY = os.environ["SERVERCHAN_SECRETKEY"]
     print('sc_key: ', SERVERCHAN_SECRETKEY)
-    if isinstance(SERVERCHAN_SECRETKEY,str) and len(SERVERCHAN_SECRETKEY)>0:
-        print('检测到 SCKEY， 准备推送')
-        push_to_wechat(text = 'Zdm.CheckIn',
-                        desp = str(res),
-                        secretKey = SERVERCHAN_SECRETKEY)
+    
+    #ln_sb = SMZDM_Bot()
+    #ln_cookies = os.environ["LnCOOKIES"]
+    #ln_sb.load_cookie_str(ln_cookies)
+    #res = ln_sb.checkin()
+    #print(res)
+    #if isinstance(SERVERCHAN_SECRETKEY,str) and len(SERVERCHAN_SECRETKEY)>0:
+    #    print('检测到 SCKEY， 准备推送')
+    #    push_to_wechat(text = 'Zdm.CheckIn',
+    #                    desp = str(res),
+    #                    secretKey = SERVERCHAN_SECRETKEY)
     print('代码完毕')
