@@ -15,9 +15,9 @@ def push_to_wechat(text,desp,secretKey):
     session = requests.Session()
     data = {'text':text,'desp':'messagecontent'}
     resp = session.post(url,data = data)
-    print(resp)
-    #return resp.json()
-    return 1
+    print(text)
+    return resp.json()
+    #return 1
 
 
 if __name__ == '__main__':
